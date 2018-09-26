@@ -63,7 +63,7 @@ for i = 1 : numItr
     [ctrl, knots] = AkimaFitting5Points( rawData(:, :, i) );
     for j = 1 : numInp
         pt = AkimaPoints(knots, ctrl, u(j) );
-        conErr = contourErrorPolygonDirect(pt', rawData(:, :, i)');
+        conErr = ContourErrorPolygonDirect(pt', rawData(:, :, i)');
         if conErr > maxErr(i, 1)
             maxErr(i, 1) = conErr;
         end
@@ -76,7 +76,7 @@ for i = 1 : numItr
     [ctrl, knots] = BezierFittingFast( rawData(:, :, i) );
     pts = BezierFastPoints(knots, ctrl, numInp);
     for j = 1 : numInp
-        conErr = contourErrorPolygonDirect(pts(:, j)', rawData(:, :, i)');
+        conErr = ContourErrorPolygonDirect(pts(:, j)', rawData(:, :, i)');
         if conErr > maxErr(i, 2)
             maxErr(i, 2) = conErr;
         end
@@ -89,7 +89,7 @@ for i = 1 : numItr
     [ctrl, knots] = BsplineFittingIterative( rawData(:, :, i), p, ce, numIterativeBspline);
     for j = 1 : numInp
         pt = BsplinePoints(p, ctrl, knots, u(j) );
-        conErr = contourErrorPolygonDirect(pt', rawData(:, :, i)');
+        conErr = ContourErrorPolygonDirect(pt', rawData(:, :, i)');
         if conErr > maxErr(i, 3)
             maxErr(i, 3) = conErr;
         end
@@ -102,7 +102,7 @@ for i = 1 : numItr
     [ctrl, knots, p] = BsplineTransition(rawData(:, :, i), ce, 0.25);
     for j = 1 : numInp
         pt = BsplinePoints(p, ctrl, knots, u(j) );
-        conErr = contourErrorPolygonDirect(pt', rawData(:, :, i)');
+        conErr = ContourErrorPolygonDirect(pt', rawData(:, :, i)');
         if conErr > maxErr(i, 4)
             maxErr(i, 4) = conErr;
         end
@@ -115,7 +115,7 @@ for i = 1 : numItr
     [ctrl, knots] = BsplineFittingFast( rawData(:, :, i), p, ce, er );
     for j = 1 : numInp
         pt = BsplinePoints(p, ctrl, knots, u(j) );
-        conErr = contourErrorPolygonDirect(pt', rawData(:, :, i)');
+        conErr = ContourErrorPolygonDirect(pt', rawData(:, :, i)');
         if conErr > maxErr(i, 5)
             maxErr(i, 5) = conErr;
         end
@@ -135,33 +135,38 @@ xAxis = 1 : numItr;
 plot(xAxis, maxErr(:, 1), 'ro');
 hold on;
 plot([1, numItr], [ce, ce], 'k-.', 'LineWidth', wl);
-% xlabel('{Instance}');
-% ylabel('{\bfError} (mm)');
+xlabel('{Instance}');
+ylabel('{\bfError} (mm)');
+set(gca, 'FontName', 'Times New Roman');
 
 subplot(3, 2, 2)
 plot(xAxis, maxErr(:, 2), 'gd');
 hold on;
 plot([1, numItr], [ce, ce], 'k-.', 'LineWidth', wl);
-% xlabel('{Instance}');
-% ylabel('{\bfError} (mm)');
+xlabel('{Instance}');
+ylabel('{\bfError} (mm)');
+set(gca, 'FontName', 'Times New Roman');
 
 subplot(3, 2, 3)
 plot(xAxis, maxErr(:, 3), 'b+');
 hold on;
 plot([1, numItr], [ce, ce], 'k-.', 'LineWidth', wl);
-% xlabel('{Instance}');
-% ylabel('{\bfError} (mm)');
+xlabel('{Instance}');
+ylabel('{\bfError} (mm)');
+set(gca, 'FontName', 'Times New Roman');
 
 subplot(3, 2, 4)
 plot(xAxis, maxErr(:, 4), 'c*');
 hold on;
 plot([1, numItr], [ce, ce], 'k-.', 'LineWidth', wl);
-% xlabel('{Instance}');
-% ylabel('{\bfError} (mm)');
+xlabel('{Instance}');
+ylabel('{\bfError} (mm)');
+set(gca, 'FontName', 'Times New Roman');
 
 subplot(3, 2, [5, 6])
 plot(xAxis, maxErr(:, 5), 'ms');
 hold on;
 plot([1, numItr], [ce, ce], 'k-.', 'LineWidth', wl);
-% xlabel('{Instance}');
-% ylabel('{\bfError} (mm)');
+xlabel('{Instance}');
+ylabel('{\bfError} (mm)');
+set(gca, 'FontName', 'Times New Roman');

@@ -13,7 +13,7 @@ wl = 2;
 [controlPoints, knotVector ] = AkimaFitting5Points( rawData );
 u = linspace(0, 1, N);
 [pts, ~, ~, cur]  = AkimaPoints(knotVector, controlPoints, u);
-err = contourErrorPolygonDirect(pts', rawData');
+err = ContourErrorPolygonDirect(pts', rawData');
 fc = figure('Name', 'Contour after fitting');
 plot(pts(1,: ), pts(2, :), 'r' );
 xlabel('{\bfX}(mm)');
@@ -38,7 +38,7 @@ hold on;
 figure(fc);
 plot(pts(1, :), pts(2, :), 'g-' );
 
-err = contourErrorPolygonDirect(pts', rawData');
+err = ContourErrorPolygonDirect(pts', rawData');
 figure(fr)
 plot(pts(1, :), err, 'g'); 
 
@@ -53,7 +53,7 @@ u = linspace(0, 1, N);
 figure(fc);
 plot(pts(1, :), pts(2, :), 'b-' );
 
-err = contourErrorPolygonDirect(pts', rawData');
+err = ContourErrorPolygonDirect(pts', rawData');
 figure(fr)
 plot(pts(1, :), err, 'b'); 
 
@@ -64,7 +64,7 @@ plot(pts(1, :), cur, 'b');
 [ctrl, knots, p] = BsplineTransition(rawData, ce, 0.25);
 u = linspace(0, 1, N);
 [pts, ~, ~, cur]  = BsplinePoints(p, ctrl, knots, u );
-err = contourErrorPolygonDirect(pts', rawData');
+err = ContourErrorPolygonDirect(pts', rawData');
 
 figure(fc)
 plot(pts(1,: ), pts(2, :), 'c' );
@@ -91,20 +91,23 @@ plot(rawData(1, :), rawData(2, :), 'ko-.', 'LineWidth', wl);
 legend('Akima', 'Bezier', 'Iterative', 'Transition',...
     'Proposed', 'Linear');
 % xlim([-0.02, 2]);
+set(gca, 'FontName', 'Times New Roman');
 
-err = contourErrorPolygonDirect(pts', rawData');
+err = ContourErrorPolygonDirect(pts', rawData');
 figure(fr)
 plot(pts(1, :), err, 'm', 'LineWidth', wl); 
 plot([pts(1, 1), pts(1, end)], [ce, ce], 'k-.', 'LineWidth', wl);
 legend('Akima', 'Bezier', 'Iterative', 'Transition', ...
     'Proposed', 'Tolerance');
 % xlim([0, 2]);
+set(gca, 'FontName', 'Times New Roman');
 
 figure(fcur)
 plot(pts(1, :), cur, 'm-', 'LineWidth', wl ); 
 legend('Akima', 'Bezier', 'Iterative', 'Transition', ...
     'Proposed');
 % xlim([0, 2]);
+set(gca, 'FontName', 'Times New Roman');
 
 % derivatives.
 der = zeros(2, N);
