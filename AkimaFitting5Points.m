@@ -4,11 +4,11 @@ function [ controlPoints, knotVector ] = AkimaFitting5Points( rawData )
 % based on Akima curve fitting, IJMTM, 2014.
 % input:
 %   rawData, (dim * number), data points to fit. Each column is a point.
-% ouput:
+% output:
 %   knotVector, knot vector of the Akima spline curve.
 %   controlPoints, control points of the Akima spline curve.
-%       number of control points equals is four times of the number of the
-%       points - 1. Each sub Akima curve has foour control points.
+%       number of control points is four times of the number of the
+%       points - 1. Each sub Akima curve has four control points.
 % HJ, 20180119
 [dim, num] = size(rawData); % dimension and number of data points.
 knotVector = CalculateKnots(rawData);

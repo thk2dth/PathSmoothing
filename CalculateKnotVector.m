@@ -5,7 +5,7 @@ function [ knotVector, curveParameter ] = CalculateKnotVector( rawData, p)
 % input:
 %   rawData (dim * number), data points to fit
 %   p, degree of the B-spline curve
-% ouput:
+% output:
 %   knotVector, knot vector of the B-spline
 %   curveParameter, parameters corresponding to the data points.
 % HJ, 20160606

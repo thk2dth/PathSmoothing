@@ -7,7 +7,7 @@ function controlPoints = BsplineFittingPIA(rawData, degree, knotVector, curvePar
 %   curveParameter, parameters corresponding to the data points.
 %   tol, fitting tolerance.
 %   maxItr, maximum number for iteration.
-% ouput:
+% output:
 %   controlPoints, control points of the final bspline.
 % HJ, 20160607
 validateattributes(knotVector, {'numeric'}, {'real', 'vector', 'nondecreasing'});

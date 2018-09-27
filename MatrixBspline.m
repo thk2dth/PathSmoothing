@@ -2,15 +2,15 @@ function basisMatrix = MatrixBspline( curveParameter, degree, knotVector )
 % obtain the matrix of the bspline basis function  with the given
 % parameter.
 % input:
-%   parameter, the parameters where the basis matrix is derieved.
+%   parameter, the parameters where the basis matrix is derived.
 %                    could be a scalar or a vector.
 %   degree, degree of the B-spline basis.
 %   knotVector, knot vector of the B-spline basis.
-% ouput:
+% output:
 %   basisMatrix, matrix of the basis function with a dimension of
 %                     ( number of parameters * number of control points)
 
-% this function wil call the function basisfun(i,u,p,U).
+% this function will call the function basisfun(i,u,p,U).
 % HJ, 20160606
 validateattributes(curveParameter, {'numeric'}, {'real', 'vector'});
 validateattributes(degree, {'numeric'}, {'positive', 'integer', 'scalar'});

@@ -7,7 +7,7 @@ function [ctrlNew, knotsNew] = BsplineFittingFast( rawData, degree, ce, er )
 %   curveParameter, parameters corresponding to the data points.
 %   ce, chord error for curve fitting.
 %   er, error ratio, error in rough fitting / tolerance.
-% ouput:
+% output:
 %   ctrlNew, control points of the b-spline curve after fitting
 %   knotsNew, knot vector of the b-spline curve after fitting.
 % HJ, 20180115

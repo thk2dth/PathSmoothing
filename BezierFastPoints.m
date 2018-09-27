@@ -3,8 +3,8 @@ function [pts, der1, der2, cur] = BezierFastPoints( knotInterval, controlPoints,
 % input:
 %   knotVector, knot vector of the Akima spline curve.
 %   controlPoints, control points of the Akima spline curve.
-%       number of control points equals is four times of the number of the
-%       knotVector - 1. Each sub Akima curve has foour control points.
+%       number of control points is four times of the number of the
+%       knotVector - 1. Each sub Akima curve has four control points.
 %   N, number of points to be evaluated.
 % output:
 %   pts, points at curve parameters. Each column is a point.

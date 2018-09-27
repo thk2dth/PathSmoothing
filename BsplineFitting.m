@@ -7,7 +7,7 @@ function [nrb, curveParameter] = BsplineFitting( rawData, degree, method, tol )
 %   degree, degree of the B-spline curve
 %   method, fitting
 %   tol, tolerance
-% ouput:
+% output:
 %   nrb, b-spline (nurbs) curve after fitting. see function nrbmak
 %   curveParameter, parameters corresponding to the data points.
 % HJ, 20160607

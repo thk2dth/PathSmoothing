@@ -2,7 +2,7 @@
 % The comparison consists of the following steps.
 % (1) Generate 5*100 points in 3-D space. The distance and angle between the adjacent
 % points are both randomly generated and belong to a specified range.
-% (2) The Akima fittting, the fast Bezier fitting, the iterative B-spline
+% (2) The Akima fitting, the fast Bezier fitting, the iterative B-spline
 % fitting, and the proposed two-step methods are applied to the generated
 % 500 points. Hence there is 100 loops, and each loop processes 5 points.
 % (3) 1000 points are sampled on the resultant curves, and are used to
@@ -13,7 +13,7 @@ clear all;
 numItr = 100;
 numPts = 5;
 ce = 0.04; % chord error
-er = 0.2; % error ratio. The smaller, the more strigent for rough fitting.
+er = 0.2; % error ratio. The smaller, the more stringent for rough fitting.
 p = 3; % degree of B-spline.
 lenRange = [0.5, 2];
 alphaRange = [2.5, 30] * (pi/180); % the angle range between adjacent lines.

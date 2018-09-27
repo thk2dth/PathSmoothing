@@ -4,13 +4,13 @@ function [ controlPoints, knotInterval ] = BezierFittingFast( rawData )
 % real-time lookahead function for high-accuracy machining, IJMTM, 2007.
 % input:
 %   rawData, (dim * number), data points to fit. Each column is a point.
-% ouput:
+% output:
 %   knotInterval, knot interval of each Bezier curve.
 %       The number of Bezier curve segments is the number of rawData - 1.
 %   controlPoints, control points of the Bezier curves.
 %       The number of Bezier curves will be number of rawData - 3.
 %       Each cubic Bezier curve has four control points. Thus, the 
-%       totol number of control points is 4 * (number of rawData - 3).
+%       total number of control points is 4 * (number of rawData - 3).
 % HJ, 20180120
 [dim, num] = size(rawData);
 knotInterval = zeros(2, num - 1); % knot intervals of the Bezier curve segments.

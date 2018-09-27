@@ -26,7 +26,7 @@ d = zeros(1, 3); % three d2 values, for inserting the intermediate points.
 for i = 2 : num-1
     [c, k, d2] = Transition3Points(rawData(:, i-1), rawData(:, i), ...
         rawData(:, i+1), ce, r);
-    % There are total 7 sgements, 3 B-splines and 4 remaining linear
+    % There are total 7 segments, 3 B-splines and 4 remaining linear
     % segments.
     % the multiplicity of the parameter at the junction is 3, not 4.
     knots(7*i-9 : 7*i-6) = (k(2:5) + (2*i-3) ) / 7.0;

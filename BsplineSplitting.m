@@ -1,6 +1,6 @@
 function [ctrlNew, knotsNew] = BsplineSplitting( degree, ctrl, knots, curveParameter )
 % split the bspline by the curve parameters.
-% after knot insert the multipilicity of each curve parameter will be p,
+% after knot insert the multiplicity of each curve parameter will be p,
 % where p is the degree of the bspline curve.
 % input:
 %   degree, degree of the bspline curve before splitting.

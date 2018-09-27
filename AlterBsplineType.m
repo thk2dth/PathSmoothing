@@ -1,6 +1,6 @@
 function [flag, der1, der2] = AlterBsplineType(pts, p, ctrl, knots, curveParameter, ce )
-% determine which one of the six middle control points  should be altered.
-% after knot inserting, each curve parameter in the knot vector has a multiplicity of the
+% Determine which one of the six middle control points should be altered.
+% After knot inserting, each curve parameter in the knot vector has a multiplicity of the
 % degree, which means the curve point at the parameter is one of the control
 % points.
 % input:
